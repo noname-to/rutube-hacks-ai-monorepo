@@ -1,13 +1,13 @@
-ноунеймы.рф {
+xn--e1aijbaf9a6d.xn--p1ai {
 	root * /srv/client
 	file_server
 }
 
-апи.ноунеймы.рф {
+xn--80aqu.xn--e1aijbaf9a6d.xn--p1ai {
 	reverse_proxy backend:8000
 }
 
-скринкаст.ноунеймы.рф {
+xn--80apfboqfgj.xn--e1aijbaf9a6d.xn--p1ai {
 	rewrite * /screencast.mp4
 	root * /srv/video
 	file_server
