@@ -1,0 +1,9 @@
+services:
+    web-backend:
+        build:
+            context: ./apps
+            dockerfile: Dockerfile
+        ports:
+            - "8000:8000"
+        environment:
+            - ENV=production
