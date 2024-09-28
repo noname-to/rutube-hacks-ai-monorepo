@@ -1,6 +1,8 @@
+import uuid
 from fastapi import FastAPI, Form, UploadFile, File, HTTPException
 from typing import List
 from asyncio import sleep
+import aiofiles
 
 app = FastAPI()
 
@@ -11,7 +13,12 @@ async def process_video(title: str = Form(...), description: str = Form(...), fi
         raise HTTPException(status_code=400, detail="Invalid file type. Please upload a video file.")
     
     try:
-        video_bytes = await file.read()
+        unique_filename = f"{uuid.uuid4()}.{file.filename.split('.')[-1]}"
+
+        async with aiofiles.open(f"uploads/{unique_filename}", 'wb') as out_file:
+            video_bytes = await file.read()
+            await out_file.write(video_bytes)
+            
         print(title, description)
         # TODO: эээ процессинг
         # print(video_bytes)
