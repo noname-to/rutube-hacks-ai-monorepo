@@ -12,9 +12,9 @@ https://github.com/user-attachments/assets/ec84ee54-18e8-4da2-bcfb-11222d7232a9
 
 _Код вы можете посмотреть по клику_
 
--   ml-tagger (стек)
+-   [ml-tagger](https://github.com/noname-to/rutube-hacks-ai-ml-tagger) (стек)
 
-Этот сервис отвечает за... код смотреть тут...
+Этот сервис отвечает за... 
 
 -   ..etc
 
