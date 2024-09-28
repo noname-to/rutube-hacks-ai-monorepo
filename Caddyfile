@@ -1,0 +1,8 @@
+noname.to {
+	root * /srv
+	file_server
+
+	handle /api/* {
+		reverse_proxy backend:8000
+	}
+}

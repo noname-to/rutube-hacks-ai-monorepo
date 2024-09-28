@@ -1,5 +1,18 @@
 services:
-    web-backend:
+    caddy:
+        image: caddy:latest
+        restart: unless-stopped
+        ports:
+            - "80:80"
+            - "443:443"
+            - "443:443/udp"
+        volumes:
+            - ./Caddyfile:/etc/caddy/Caddyfile
+            - frontend_dist:/srv
+            - caddy_data:/data
+            - caddy_config:/config
+
+    backend:
         build:
             context: ./apps
             dockerfile: Dockerfile
@@ -7,3 +20,8 @@ services:
             - "8000:8000"
         environment:
             - ENV=production
+
+volumes:
+    caddy_data:
+    caddy_config:
+    frontend_dist:
