@@ -20,7 +20,7 @@ services:
             context: ./apps/client
             dockerfile: Dockerfile
             args:
-                VITE_ENDPOINT: ${VITE_ENDPOINT}
+                VITE_ENDPOINT: http://127.0.0.1/api
         env_file:
             - .env
         volumes:
@@ -30,8 +30,10 @@ services:
 
     backend:
         build:
-            context: ./apps/backend
-            dockerfile: Dockerfile
+            context: ./apps
+            dockerfile: ./backend/Dockerfile
+        volumes:
+            - static_uploads:/app/uploads
         ports:
             - "8000:8000"
         environment:
@@ -43,6 +45,7 @@ volumes:
     caddy_data:
     caddy_config:
     frontend_dist:
+    static_uploads:
 
 networks:
     app-network:

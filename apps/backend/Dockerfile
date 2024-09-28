@@ -2,13 +2,21 @@ FROM python:3.11-slim
 
 RUN pip install poetry
 
-WORKDIR /app
+COPY ./av_keywords /app/av_keywords
 
-COPY pyproject.toml poetry.lock ./
+WORKDIR /app/backend
 
+COPY ./backend/pyproject.toml  /app/backend/
+COPY ./backend/poetry.lock /app/backend/
 RUN poetry config virtualenvs.create false \
     && poetry install --no-interaction --no-ansi
 
-COPY . .
+COPY ./backend /app/backend
+
+RUN ls
+
+RUN ls /app
+
+WORKDIR /app/backend
 
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

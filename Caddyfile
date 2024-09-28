@@ -1,28 +1,28 @@
-xn--e1aijbaf9a6d.xn--p1ai {
-	root * /srv/client
-	file_server
-}
-
-xn--80aqu.xn--e1aijbaf9a6d.xn--p1ai {
-	header Access-Control-Allow-Origin *
-	header Access-Control-Allow-Methods "GET, POST, OPTIONS"
-	header Access-Control-Allow-Headers "Content-Type, Authorization"
-
-	reverse_proxy backend:8000
-}
-
-xn--80apfboqfgj.xn--e1aijbaf9a6d.xn--p1ai {
-	rewrite * /screencast.mp4
-	root * /srv/video
-	file_server
-}
-
-# :80 {
-# 	root * /srv
+# xn--e1aijbaf9a6d.xn--p1ai {
+# 	root * /srv/client
 # 	file_server
-
-# 	handle /api/* {
-# 		rewrite * /
-# 		reverse_proxy backend:8000
-# 	}
 # }
+
+# xn--80aqu.xn--e1aijbaf9a6d.xn--p1ai {
+# 	header Access-Control-Allow-Origin *
+# 	header Access-Control-Allow-Methods "GET, POST, OPTIONS"
+# 	header Access-Control-Allow-Headers "Content-Type, Authorization"
+
+# 	reverse_proxy backend:8000
+# }
+
+# xn--80apfboqfgj.xn--e1aijbaf9a6d.xn--p1ai {
+# 	rewrite * /screencast.mp4
+# 	root * /srv/video
+# 	file_server
+# }
+
+:80 {
+	root * /srv
+	file_server
+
+	handle /api/* {
+		rewrite * /
+		reverse_proxy backend:8000
+	}
+}
