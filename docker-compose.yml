@@ -11,6 +11,19 @@ services:
             - frontend_dist:/srv
             - caddy_data:/data
             - caddy_config:/config
+        networks:
+            - app-network
+
+    frontend:
+        build:
+            context: ./apps/client
+            dockerfile: ../Dockerfile.frontend
+        environment:
+            - VITE_API_BASE_URL=https://noname.to/api
+        volumes:
+            - frontend_dist:/app/dist
+        networks:
+            - app-network
 
     backend:
         build:
@@ -20,8 +33,14 @@ services:
             - "8000:8000"
         environment:
             - ENV=production
+        networks:
+            - app-network
 
 volumes:
     caddy_data:
     caddy_config:
     frontend_dist:
+
+networks:
+    app-network:
+        driver: bridge
