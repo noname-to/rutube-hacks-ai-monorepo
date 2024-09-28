@@ -1,8 +1,9 @@
-noname.to {
+:80 {
 	root * /srv
 	file_server
 
 	handle /api/* {
+		rewrite * /
 		reverse_proxy backend:8000
 	}
 }

@@ -1,12 +1,12 @@
 FROM oven/bun:1
 
-COPY ./apps/ /app/
+COPY ./ /app/
 
 WORKDIR /app
 
 RUN bun install
 
-RUN bunx --bun vite build --outDir /app/build-temp
+RUN VITE_ENDPOINT=http://127.0.0.1/api/ bunx --bun vite build --outDir /app/build-temp
 
 # Костыль но с кем не бывает
 RUN echo '#!/bin/sh\ncp -r /app/build-temp/* /app/dist/' > /app/init.sh

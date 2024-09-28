@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Form, UploadFile, File, HTTPException
 from typing import List
+from asyncio import sleep
 
 app = FastAPI()
 
@@ -14,9 +15,9 @@ async def process_video(title: str = Form(...), description: str = Form(...), fi
         print(title, description)
         # TODO: эээ процессинг
         # print(video_bytes)
+        await sleep(5)
 
-
-        result = ["Тег-1", "Тег-2", "Тег-3"]
+        result = ["Тег1", "Тег2", "Тег3"]
 
         return result
     except Exception as e:
