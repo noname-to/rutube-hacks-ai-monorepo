@@ -2,9 +2,13 @@
 
 <!-- TODO:// видео-скринкаст -->
 
-<video src='https://static.videezy.com/system/resources/previews/000/038/120/original/puppy_hand.mp4'></video>
 
-## Общее писание решения
+
+https://github.com/user-attachments/assets/ec84ee54-18e8-4da2-bcfb-11222d7232a9
+
+
+
+## Общее описание решения
 
 <!-- возможно тизер -->
 
