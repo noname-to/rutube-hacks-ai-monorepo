@@ -18,8 +18,10 @@ services:
         build:
             context: ./apps/client
             dockerfile: Dockerfile
-        environment:
-            - VITE_ENDPOINT=http://127.0.0.1/api/
+            args:
+                VITE_ENDPOINT: ${VITE_ENDPOINT}
+        env_file:
+            - .env
         volumes:
             - frontend_dist:/app/dist
         networks:

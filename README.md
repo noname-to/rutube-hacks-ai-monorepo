@@ -27,7 +27,35 @@ _Код вы можете посмотреть по клику_
 
 ### Как запустить весь проект (или только модельку)
 
-Сервисы упакованы в [Docker](https://docs.docker.com/) и могут быть развёрнуты простой командой:
+Требования - Git, [Docker](https://docs.docker.com/)
+
+Для начала склонируем наш репозиторий:
+
+```sh
+git clone https://github.com/noname-to/rutube-hacks-ai-monorepo.git
+```
+
+Укажите переменные среды под ваши нужды:
+
+```dotenv
+VITE_ENDPOINT=http://127.0.0.1/api/ # Адрес где развёрнут бекенд на который отправляет запрос фронтенд
+```
+
+Отредактируйте Caddyfile
+
+```Caddyfile
+:80 { # Поменяйте :80 на доменное имя, которое привязано к серверу на котором вы разворачиваете
+	root * /srv
+	file_server
+
+	handle /api/* {
+		rewrite * /
+		reverse_proxy backend:8000
+	}
+}
+```
+
+Так-как сервисы упакованы в [Docker](https://docs.docker.com/) и могут быть развёрнуты простой командой:
 
 ```sh
 docker compose up
