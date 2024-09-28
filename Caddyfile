@@ -8,7 +8,7 @@
 }
 
 скринкаст.ноунеймы.рф {
-	rewrite * / screencast.mp4
+	rewrite * /screencast.mp4
 	root * /srv/video
 	file_server
 }
