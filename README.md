@@ -2,11 +2,7 @@
 
 <!-- TODO:// видео-скринкаст -->
 
-
-
 https://github.com/user-attachments/assets/ec84ee54-18e8-4da2-bcfb-11222d7232a9
-
-
 
 ## Общее описание решения
 
@@ -45,17 +41,16 @@ git clone https://github.com/noname-to/rutube-hacks-ai-monorepo.git
 VITE_ENDPOINT=http://127.0.0.1/api/ # Адрес где развёрнут бекенд на который отправляет запрос фронтенд
 ```
 
-Отредактируйте Caddyfile
+Отредактируйте Caddyfile, заменив на необходимые вам домены:
 
 ```Caddyfile
-:80 { # Поменяйте :80 на доменное имя, которое привязано к серверу на котором вы разворачиваете
-	root * /srv
+ноунеймы.рф {
+	root * /srv/client
 	file_server
+}
 
-	handle /api/* {
-		rewrite * /
-		reverse_proxy backend:8000
-	}
+апи.ноунеймы.рф {
+	reverse_proxy backend:8000
 }
 ```
 

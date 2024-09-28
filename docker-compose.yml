@@ -8,7 +8,8 @@ services:
             - "443:443/udp"
         volumes:
             - ./Caddyfile:/etc/caddy/Caddyfile
-            - frontend_dist:/srv
+            - ./screencast.mp4:/srv/video
+            - frontend_dist:/srv/client
             - caddy_data:/data
             - caddy_config:/config
         networks:
