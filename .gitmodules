@@ -1,0 +1,3 @@
+[submodule "apps/ml-tagger"]
+	path = apps/ml-tagger
+	url = https://github.com/noname-to/rutube-hacks-ai-ml-tagger.git
