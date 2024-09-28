@@ -20,7 +20,7 @@ services:
             context: ./apps/client
             dockerfile: Dockerfile
             args:
-                VITE_ENDPOINT: http://127.0.0.1/api
+                VITE_ENDPOINT: ${VITE_ENDPOINT} # http://127.0.0.1/api
         env_file:
             - .env
         volumes:
