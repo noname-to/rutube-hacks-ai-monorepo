@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "rutube-cp"
+version = "0.1.0"
+description = ""
+authors = ["Kravets <57632712+kravetsone@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.115.0"
+uvicorn = "^0.30.6"
+pydantic = "^2.9.2"
+python-multipart = "^0.0.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
