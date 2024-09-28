@@ -12,7 +12,6 @@
 	root * /srv/video
 	file_server
 }
-}
 
 # :80 {
 # 	root * /srv
