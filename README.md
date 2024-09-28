@@ -44,12 +44,16 @@ VITE_ENDPOINT=http://127.0.0.1/api/ # Адрес где развёрнут бе�
 Отредактируйте Caddyfile, заменив на необходимые вам домены:
 
 ```Caddyfile
-ноунеймы.рф {
+xn--e1aijbaf9a6d.xn--p1ai { # адрес фронтенда
 	root * /srv/client
 	file_server
 }
 
-апи.ноунеймы.рф {
+xn--80aqu.xn--e1aijbaf9a6d.xn--p1ai { # адрес бекенда
+	header Access-Control-Allow-Origin *
+	header Access-Control-Allow-Methods "GET, POST, OPTIONS"
+	header Access-Control-Allow-Headers "Content-Type, Authorization"
+
 	reverse_proxy backend:8000
 }
 ```
