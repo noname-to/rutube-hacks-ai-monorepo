@@ -40,7 +40,7 @@ async def process_video(title: str = Form(...), description: str = Form(...), fi
         
         result = ["Тег1", "Тег2", "Тег3"]
 
-        return get_tags(unique_filename, title, description)
+        return await get_tags(unique_filename, title, description)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
 
