@@ -40,6 +40,13 @@ services:
             - ENV=production
         networks:
             - app-network
+        deploy:
+            resources:
+                reservations:
+                    devices:
+                        - driver: nvidia
+                          count: all
+                          capabilities: [gpu]
 
 volumes:
     caddy_data:
