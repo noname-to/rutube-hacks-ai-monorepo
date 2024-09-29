@@ -34,7 +34,7 @@ services:
             dockerfile: ./backend/Dockerfile
         volumes:
             - static_uploads:/app/uploads
-            - backend_caches:~/.cache
+            - backend_caches:/root/.cache
         ports:
             - "8000:8000"
         environment:
