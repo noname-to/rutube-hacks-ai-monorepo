@@ -124,4 +124,4 @@ def get_tags(filename: str, title: str, description: str):
     data = proceed_data(os.path.join(uploads_directory, filename), title, description)
         
     # await sleep(5)
-    return data["video"].split("\n")
+    return data
