@@ -116,10 +116,11 @@ current_directory = os.getcwd()
 uploads_directory = os.path.join(current_directory, "../uploads")
 
 async def get_tags(filename: str, title: str, description: str):
+    print(filename, title, description)
     # async with aiofiles.open(os.path.join(uploads_directory, filename), 'rb') as in_file:
     #     content = await in_file.read()
         
-    data = proceed_data(os.path.join(uploads_directory, filename))
+    data = proceed_data(os.path.join(uploads_directory, filename), title, description)
         
     # await sleep(5)
     return data["video"].split("\n")
