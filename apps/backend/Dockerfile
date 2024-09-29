@@ -1,5 +1,7 @@
 FROM python:3.11-slim
 
+RUN apt-get update && apt-get install -y ffmpeg
+
 RUN pip install poetry
 
 COPY ./av_keywords /app/av_keywords
