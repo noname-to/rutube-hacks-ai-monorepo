@@ -34,6 +34,7 @@ services:
             dockerfile: ./backend/Dockerfile
         volumes:
             - static_uploads:/app/uploads
+            - backend_caches:~/.cache
         ports:
             - "8000:8000"
         environment:
@@ -53,6 +54,7 @@ volumes:
     caddy_config:
     frontend_dist:
     static_uploads:
+    backend_caches:
 
 networks:
     app-network:
