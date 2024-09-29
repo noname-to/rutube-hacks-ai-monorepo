@@ -21,7 +21,6 @@ from av_keywords import get_tags
 
 app = FastAPI()
 
-
 @app.post("/", response_model=List[str])
 async def process_video(title: str = Form(...), description: str = Form(...), file: UploadFile = File(...)):
     print('get content')

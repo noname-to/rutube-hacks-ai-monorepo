@@ -94,7 +94,8 @@ def get_data(filename):
         start_time = i * audio_index_multiplier * 10 * 1000
         end_time = (i+1) * audio_index_multiplier * 10 * 1000
         part = audio_file[start_time:end_time]
-        new_path = "/dev/shm/avkw-" + filename.split(".")[0] + "-" + str(i) + ".wav"
+        path_decoded = filename.split("/")
+        new_path = "/dev/shm/avkw-" + path_decoded[len(path_decoded)-1].split(".")[0] + "-" + str(i) + ".wav"
         part.export(new_path, format="wav")
         audio_part_paths.append(new_path)
 
