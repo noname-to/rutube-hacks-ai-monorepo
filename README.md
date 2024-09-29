@@ -14,8 +14,8 @@ https://github.com/user-attachments/assets/4acb12aa-bd2e-4ccd-8bd7-4b55bab70843
 
 _Код вы можете посмотреть по клику_
 
--   [ml-tagger](https://github.com/noname-to/rutube-hacks-ai-ml-tagger)
--   [av-keywords](https://github.com/noname-to/rutube-hacks-ai-monorepo/tree/main/apps/av_keywords)
+-   [ml-tagger](https://github.com/noname-to/rutube-hacks-ai-ml-tagger) (`Python`, `pandas`, `sklearn`, `numpy`)
+-   [av-keywords](https://github.com/noname-to/rutube-hacks-ai-monorepo/tree/main/apps/av_keywords) (`Python`, `av`, `transformers`, `torch`, `numpy`)
 
 Наше решение представляет собой высокоэффективный алгоритм для автоматического подбора тегов к видео на платформе RUTUBE. Основная задача алгоритма — достичь оптимального баланса между скоростью обработки и точностью определения контекста видео.
 
@@ -87,5 +87,3 @@ sudo systemctl restart docker
 ```sh
 docker compose up -d
 ```
-
-<!-- Ссылка на презентацию -->
