@@ -41,6 +41,7 @@ services:
             - ENV=production
         networks:
             - app-network
+        shm_size: "20gb"
         deploy:
             resources:
                 reservations:
