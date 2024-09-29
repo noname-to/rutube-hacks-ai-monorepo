@@ -109,13 +109,14 @@ def get_data(filename):
 
 def proceed_data(filename, title, description):
     data = get_data(filename)
+    print(data)
     # TODO Pass data, title, description to ondre-uwu and get tags 
     return data["video"].split("\n")
 
 current_directory = os.getcwd()
 uploads_directory = os.path.join(current_directory, "../uploads")
 
-async def get_tags(filename: str, title: str, description: str):
+def get_tags(filename: str, title: str, description: str):
     print(filename, title, description)
     # async with aiofiles.open(os.path.join(uploads_directory, filename), 'rb') as in_file:
     #     content = await in_file.read()
