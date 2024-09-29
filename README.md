@@ -1,6 +1,10 @@
 # Наш проект
 
-https://github.com/user-attachments/assets/ec84ee54-18e8-4da2-bcfb-11222d7232a9
+
+
+https://github.com/user-attachments/assets/4acb12aa-bd2e-4ccd-8bd7-4b55bab70843
+
+
 
 ## Общее описание решения
 
